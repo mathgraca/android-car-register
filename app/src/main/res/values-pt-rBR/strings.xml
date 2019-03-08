@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_sign_in">Entre ou se cadastre</string>
+    <string name="action_sign_in_short">Entre</string>
+    <string name="error_invalid_email">O email é inválido</string>
+    <string name="error_invalid_password">Senha muito curta</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Campo Obrigatório</string>
+    <string name="permission_rationale">Necesseario acesso aos contatos</string>
+    <string name="user">Usuario</string>
+    <string name="password">Senha</string>
+    <string name="prompt_password" >Senha (Opcional)</string>
+    <string name="register">Cadastre-se</string>
+    <string name="user.already.registered">Usuário já cadastrado</string>
+    <string name="user.success.registered">Usuário %1$s! cadastrado com sucesso</string>
+    <string name="car_image">Imagem do Carro</string>
+</resources>
