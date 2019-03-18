@@ -18,13 +18,12 @@ import android.provider.ContactsContract
 import android.text.TextUtils
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.ArrayAdapter
-import android.widget.TextView
 
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
-import android.widget.Toast
+import android.os.PersistableBundle
+import android.widget.*
 
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -57,6 +56,27 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             val msgAlreadyRegistered = getString(R.string.user_success_registered, strUser)
             Toast.makeText(this, msgAlreadyRegistered, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        val user = savedInstanceState?.getCharSequence("user")
+        val pass = savedInstanceState?.getCharSequence("pass")
+
+        findViewById<AutoCompleteTextView>(R.id.email).setText(user.toString())
+        findViewById<EditText>(R.id.password).setText(pass.toString())
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+
+
+        val user = findViewById<AutoCompleteTextView>(R.id.email).text.toString()
+        outState?.putCharSequence("user", user)
+
+        val pass = findViewById<EditText>(R.id.password).text.toString()
+        outState?.putCharSequence("pass", pass)
+        super.onSaveInstanceState(outState)
     }
 
     fun openRegisterActivity(view: View) {

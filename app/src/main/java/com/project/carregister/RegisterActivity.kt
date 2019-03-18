@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AutoCompleteTextView
 import android.widget.EditText
 import android.widget.Toast
 
@@ -12,6 +13,27 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        val user = savedInstanceState?.getCharSequence("user")
+        val pass = savedInstanceState?.getCharSequence("pass")
+
+        findViewById<EditText>(R.id.etUser).setText(user.toString())
+        findViewById<EditText>(R.id.etPassword).setText(pass.toString())
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+
+
+        val user = findViewById<EditText>(R.id.etUser).text.toString()
+        outState?.putCharSequence("user", user)
+
+        val pass = findViewById<EditText>(R.id.etPassword).text.toString()
+        outState?.putCharSequence("pass", pass)
+        super.onSaveInstanceState(outState)
     }
 
 

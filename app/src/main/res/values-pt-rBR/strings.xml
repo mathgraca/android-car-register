@@ -14,4 +14,8 @@
     <string name="user.already.registered">Usuário já cadastrado</string>
     <string name="user.success.registered">Usuário %1$s! cadastrado com sucesso</string>
     <string name="car_image">Imagem do Carro</string>
+    <string name="brand">Marca</string>
+    <string name="year">Ano</string>
+    <string name="name">Nome</string>
+    <string name="notes">Obervação</string>
 </resources>
