@@ -46,7 +46,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     override fun onSaveInstanceState(outState: Bundle?) {
 
 
-        val user = findViewById<AutoCompleteTextView>(R.id.etUser).text.toString()
+        val user = findViewById<EditText>(R.id.etUser).text.toString()
         outState?.putCharSequence("user", user)
 
         val year = findViewById<EditText>(R.id.etYear).text.toString()
